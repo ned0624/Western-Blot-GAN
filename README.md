@@ -14,7 +14,7 @@ Western Blot is a widely used technique in molecular biology to detect specific 
 
 ## 🏗️ Model Architecture
 
-### Generator (`generator.py`)
+### Generator (`src/generator.py`)
 An encoder-decoder architecture conditioned on two template inputs:
 
 ```
@@ -26,7 +26,7 @@ Input: Template1 + Template2 (concatenated, 2 channels)
 Output: Synthesized grayscale image (1 channel, Tanh activation)
 ```
 
-### Discriminator (`discriminator.py`)
+### Discriminator (`src/discriminator.py`)
 A PatchGAN-style discriminator conditioned on both templates:
 
 ```
@@ -56,29 +56,31 @@ Loss_D = (BCE Loss on real + BCE Loss on fake) / 2
 ## 📊 Results
 
 ### Sample Generated Images
-![Test Results](test_image.png)
+![Test Results](assets/test_image.png)
 *From left to right: Template1 (BandMask), Template2 (BasePattern), Generated Image, Real Image*
 
 ### Training Loss
-![Training Loss](training_loss_plot.png)
+![Training Loss](assets/training_loss_plot.png)
 *Discriminator loss converges quickly while Generator loss reflects the combined GAN + L1 objective*
 
 ## 📁 Project Structure
 
 ```
 Western-Blot-GAN/
-├── dataset.py          # Custom Dataset class
-├── generator.py        # Conditional Generator
-├── discriminator.py    # Conditional Discriminator
-├── train.py            # Training script
-├── test.py             # Inference & evaluation script
-├── wb_dataset/         # Real Western Blot images (PNG)
-├── wb_template/        # BandMask templates (PNG)
-├── wb_template2/       # BasePattern templates (PNG)
-├── generator.pth       # Saved generator weights (generated)
-├── discriminator.pth   # Saved discriminator weights (generated)
-├── training_loss_plot.png  # Loss curve (generated)
-├── test_image.png          # Sample results (generated)
+├── src/
+│   ├── dataset.py          # Custom Dataset class
+│   ├── generator.py        # Conditional Generator
+│   ├── discriminator.py    # Conditional Discriminator
+│   ├── train.py            # Training script
+│   └── test.py             # Inference & evaluation script
+├── assets/
+│   ├── test_image.png          # Sample results
+│   └── training_loss_plot.png  # Loss curve
+├── wb_dataset/             # Real Western Blot images (PNG)
+├── wb_template/            # BandMask templates (PNG)
+├── wb_template2/           # BasePattern templates (PNG)
+├── generator.pth           # Saved generator weights (generated)
+├── discriminator.pth       # Saved discriminator weights (generated)
 ├── loss_results.csv        # Per-image L1 loss (generated)
 ├── requirements.txt
 └── README.md
@@ -111,18 +113,18 @@ wb_template2/    ← BasePattern templates (e.g. BasePattern_bg_0001.png)
 ### 4. Train
 
 ```bash
-python train.py
+python src/train.py
 ```
 
-Saves `generator.pth`, `discriminator.pth`, and `training_loss_plot.png`.
+Saves `generator.pth`, `discriminator.pth`, and `assets/training_loss_plot.png`.
 
 ### 5. Test
 
 ```bash
-python test.py
+python src/test.py
 ```
 
-Outputs `test_image.png` and `loss_results.csv` with per-image L1 loss.
+Outputs `assets/test_image.png` and `loss_results.csv` with per-image L1 loss.
 
 ## 🛠️ Tech Stack
 
