@@ -1,0 +1,29 @@
+# 模型權重
+*.pth
+*.pt
+
+# 生成的輸出
+generated_images/
+loss_results.csv
+test_image.png
+training_loss_plot.png
+
+# 資料集（通常太大）
+wb_dataset/
+wb_template/
+wb_template2/
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
