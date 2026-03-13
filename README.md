@@ -53,6 +53,16 @@ Loss_D = (BCE Loss on real + BCE Loss on fake) / 2
 | Epochs | 100 |
 | Batch Size | 1 |
 
+## 📊 Results
+
+### Sample Generated Images
+![Test Results](test_image.png)
+*From left to right: Template1 (BandMask), Template2 (BasePattern), Generated Image, Real Image*
+
+### Training Loss
+![Training Loss](training_loss_plot.png)
+*Discriminator loss converges quickly while Generator loss reflects the combined GAN + L1 objective*
+
 ## 📁 Project Structure
 
 ```
