@@ -142,9 +142,3 @@ Outputs `assets/test_image.png` and `loss_results.csv` with per-image L1 loss.
 - Combined GAN + L1 reconstruction loss
 - Multi-input conditioning (two template images)
 - Custom Dataset class with proportional resizing
-
-## 🔗 Related Projects
-
-- [AOI Defect Classification with CNN](https://github.com/ned0624/Defect-Classifications-of-AOI)
-- [Retinal Vessel Segmentation with U-Net](https://github.com/ned0624/Retinal-Vessel-Segmentation)
-- [Financial News Sentiment Analysis with BERT](https://github.com/ned0624/Financial-News-Sentiment-BERT)
